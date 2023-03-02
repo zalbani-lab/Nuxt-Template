@@ -1,0 +1,12 @@
+@use './colors' as color;
+
+$border-width: 1px !default;
+$border-color: color.$gray-200 !default;
+
+$border-radius-sm: 0.25rem !default;
+$border-radius: 0.375rem !default;
+$border-radius-lg: 0.5rem !default;
+
+$box-shadow-sm: 0 0 0.5rem rgba(color.$gray-500, 0.075) !default;
+$box-shadow: 0 0 2rem 0 rgba(color.$gray-500, 0.15) !default;
+$box-shadow-lg: 0 0 3rem rgba(color.$gray-500, 0.175) !default;

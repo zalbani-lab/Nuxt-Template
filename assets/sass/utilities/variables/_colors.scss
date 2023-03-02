@@ -1,0 +1,129 @@
+// Background
+
+$bg-color: #f8f9fe;
+
+// Color system
+
+$white: #fff !default;
+$gray-100: #f6f9fc !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #8898aa !default;
+$gray-700: #525f7f !default;
+$gray-800: #32325d !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$grays: () !default;
+$grays: map-merge(
+  (
+    '100': $gray-100,
+    '200': $gray-200,
+    '300': $gray-300,
+    '400': $gray-400,
+    '500': $gray-500,
+    '600': $gray-600,
+    '700': $gray-700,
+    '800': $gray-800,
+    '900': $gray-900,
+  ),
+  $grays
+);
+
+$blue: #5e72e4 !default;
+$indigo: #5603ad !default;
+$purple: #8965e0 !default;
+$pink: #f3a4b5 !default;
+$red: #db1a3e !default;
+$orange: #ffbb29 !default;
+$yellow: #ffd600 !default;
+$green: #8ec770 !default;
+$teal: #11cdef !default;
+$cyan: #2bffc6 !default;
+
+$colors: () !default;
+$colors: map-merge(
+  (
+    'blue': $blue,
+    'indigo': $indigo,
+    'purple': $purple,
+    'pink': $pink,
+    'red': $red,
+    'orange': $orange,
+    'yellow': $yellow,
+    'green': $green,
+    'teal': $teal,
+    'cyan': $cyan,
+    'white': $white,
+    'gray': $gray-600,
+    'light': $gray-400,
+    'lighter': $gray-200,
+    'gray-dark': $gray-800,
+  ),
+  $colors
+);
+
+// Theme colors
+$themes: (
+  default: (
+    default: #172b4d,
+    primary: #f7c109,
+    primary-text: black,
+    secondary: #0073d1,
+    secondary-text: white,
+    success: $green,
+    info: $blue,
+    warning: $orange,
+    danger: $red,
+  ),
+  light: (
+    default: #172b4d,
+    primary: #c009f7,
+    primary-text: black,
+    secondary: #0073d1,
+    secondary-text: white,
+    success: $green,
+    info: $blue,
+    warning: $orange,
+    danger: $red,
+  ),
+  dark: (
+    default: #172b4d,
+    primary: #f70909,
+    primary-text: black,
+    secondary: #0073d1,
+    secondary-text: white,
+    success: $green,
+    info: $blue,
+    warning: $orange,
+    danger: $red,
+  ),
+);
+
+@each $themeName, $variables in $themes {
+  :root {
+    @if $themeName == default {
+      @each $key, $value in $variables {
+        --#{$key}: #{$value};
+      }
+    } @else {
+      &.#{$themeName}-theme {
+        @each $key, $value in $variables {
+          --#{$key}: #{$value};
+        }
+      }
+    }
+  }
+}
+
+$default: var(--default);
+$primary: var(--primary);
+$primary-text: var(--primary-text);
+$secondary: var(--secondary);
+$secondary-text: var(--secondary-text);
+$success: var(--success);
+$info: var(--info);
+$warning: var(--warning);
+$danger: var(--danger);

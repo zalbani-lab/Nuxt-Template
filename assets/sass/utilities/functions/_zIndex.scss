@@ -1,0 +1,18 @@
+// order from foreground to background
+$z-indexes: ('modal', 'sidebar');
+
+// Set z-index
+//
+// @param $name - name of the component you want to set z-index
+// @options : modal, sidebar
+//
+// e.g. header { z-index: z-index(sidebar); }
+
+@function z-index($name) {
+  @if index($z-indexes, $name) {
+    @return (length($z-indexes) - index($z-indexes, $name))+1;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+    @return null;
+  }
+}

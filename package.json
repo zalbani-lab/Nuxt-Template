@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@intlify/unplugin-vue-i18n": "^0.8.2",
+    "@nuxtjs/color-mode": "^3.2.0",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "nuxt": "3.2.2",
+    "prettier": "^2.8.4",
+    "sass": "^1.58.3",
+    "sass-loader": "^13.2.0",
+    "typescript": "*",
+    "vue-i18n": "^9.2.2",
+    "dotenv": "^16.0.3",
+    "nuxt-simple-sitemap": "^1.0.7"
+  }
+}

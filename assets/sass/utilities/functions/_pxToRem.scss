@@ -1,0 +1,11 @@
+@use 'sass:math';
+
+// Converting a px to rem.
+//
+// @param $size - size in px of the typo you want to convert to rem
+//
+// e.g. h1 { font-size: pxToRem(50px); }
+
+@function pxToRem($size) {
+  @return math.div($size, 16px) * 1rem;
+}

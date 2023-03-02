@@ -1,0 +1,30 @@
+$breakpoints: (
+  'xs': 25rem,
+  // 400px
+  'sm': 34rem,
+  // 544px
+  'md': 48rem,
+  // 768px
+  'lg': 60rem,
+  // 960px
+  'xl': 80rem,
+  // 1280px
+  'xxl': 90rem // 1440px,,
+);
+
+// Automatically add breakpoint media query
+//
+// @param $name - name of the breakpoint you want trigger
+// @options : xs, sm, md, lg, xl, xxl
+//
+// e.g. @include breakpoint(sm) { p { color: red;}}
+
+@mixin breakpoint($name) {
+  @if not map-has-key($breakpoints, $name) {
+    @warn "Warning: `#{$name}` is not a valid breakpoint name.";
+  } @else {
+    @media only screen and (min-width: map-get($breakpoints, $name)) {
+      @content;
+    }
+  }
+}
